@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Skratch</title>
+	<meta name = "viewport" content = "width = device-width">
+	<meta name = "viewport" content = "initial-scale = 1.0">
+	<meta name = "viewport" content = "maximum-scale = 1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery-1.4.4.min.js"> </script>
+	<script type="text/javascript" src="js/skratch-UI.js"> </script>
+	<script type="text/javascript" src="js/skratch-tools.js"> </script>
+	<script type="text/javascript" src="js/skratch-data.js"> </script>
+	<script type="text/javascript" src="js/skratch-canvas-manipulation.js"> </script>
+	<script type="text/javascript" src="js/skratch-color.js"> </script>
+	
+</head>
+<body onselectstart="return false;" orient="portrait">
+<div id="app-container">
+	<div id="left-pane" class="pane">
+		<div class="header">
+			<h1>Drawings</h1>
+			<button id="new-drawing" class="right-button nav-hide">New</button>
+		</div>
+		<div class="content">
+			
+			<div id="icon_pane">
+				<!--Icons get inserted here-->
+			</div>
+			<div class="bot-button">
+				<button id="to-dataURL">Export</button>
+				<button id="try-clear-storage">Clear All</button>
+			</div>
+		</div>
+	</div> <!-- end nav pane -->
+	
+	<div id="right-pane" class="pane">
+		<div class="header">
+			<h1>Options</h1>
+			<button id="opt-hide" class="left-button">Close</button>
+		</div>
+		<div class="content" id="tools">
+			<div id="toolnames" class="button-set">
+				<button id="pencil-tool">Pencil</button>
+				<button id="pen-tool">Pen</button>
+				<button id="eraser-tool">Eraser</button>
+			</div>
+			<div id="brush-preview-wrap">
+				<div id="brush-preview"></div>
+			</div>
+			<div id="tool-options"><span id="tool-float">
+				<div id ="size" class="c-full"><span>Size</span></div>
+				<div id ="opacity" class="c-full"><span>Opacity</span></div>
+				<div id ="lightness" class="c-full"><span>Lightness</span></div>
+				<div id ="colorA" class="c-full"><span>ColorA</span></div>
+				<div id ="colorB" class="c-full"><span>ColorB</span></div>
+			</span></div>
+			<div class="button-set opt-navigate">
+				<button class="opt-tools">Tools</button>
+				<button class="opt-backgrounds">Backgrounds</button>
+			</div>
+			<button id="opt-clear">Clear Drawing</button>
+
+		</div>
+		<div class="content" id="backgrounds">
+			<div id="backgrounds-pane">
+				<!-- Backgrounds thumbs get inserted here -->
+			</div>
+			<div class="button-set opt-navigate">
+				<button class="opt-tools">Tools</button>
+				<button class="opt-backgrounds">Backgrounds</button>
+			</div>
+		</div>
+
+	</div> <!-- end opt pane -->
+
+	<div class="main-window" id="main-window">
+		<div class="header">
+			<h1>Skratch</h1>
+			<button id="app-back" class="left-button">Done</button>
+			<button id="app-option" class="right-button">Options</button>
+		</div>
+		<div class="page" id="canvas-container">
+			<div id="click-catcher">
+				<div class="alert">Alert, something went wrong!</div>
+			</div> <!-- end page -->
+			<!-- Canvas gets injected here -->
+		</div>
+	</div> <!-- end main-window -->
+	
+	<div class="alert" id="confirm-clear-storage">
+		<p>Are you sure you want to delete all drawings?</p>
+		<div class="bot-button">
+			<button class="cancel">Cancel</button>
+			<button id="clear-storage">Ok</button>
+		</div>
+	</div>
+	
+	<div class="alert" id="confirm-email">
+		<p>Email Drawing</p>
+		<div class="bot-button">
+			<button class="cancel">Cancel</button>
+			<button id="email-drawings">...</button>
+		</div>
+	</div>
+	
+	<div class="alert" id="too-many-files-alert">
+		<p>Sorry, you have exceeded the number of drawings that Skratch allows. Please clear existing ones with the "Clear Current" button.</p>
+		<div class="bot-button">
+			<button>Ok</button>
+		</div>
+	</div>
+	
+	<div class="alert" id="confirm-clear-current">
+		<p>Are you sure you want to clear the current canvas? (No undo available)</p>
+		<div class="bot-button">
+			<button>Cancel</button>
+			<button id="clear-current">Ok</button>
+		</div>
+	</div>
+	
+	<div class="alert" id="bg-loading">
+		<p>Loading<img class="loader" src="css/images/loader.png"/></p>
+	</div>
+	
+	
+	<div class="shade">
+	
+	<div id="export-dialog">
+		<h3>Export</h3>
+		<p>Just drag the image to the desktop, or long-click on iOS for more options</p>
+		<button id="export-dialog-close" class="bot-button">Close</button>
+	</div>
+	
+	</div>
+	<div id="tooltips"></div>
+	<div id="tooltips-toggle"><p>x</p></div>
+	
+</div>
+<div id="debug"></div>
+
+<!-- End page content -->
+</body>
+
+</html>

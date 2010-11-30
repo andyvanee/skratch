@@ -1,0 +1,116 @@
+body {margin: 0; padding: 0; overflow: hidden; background: #EEE;}
+body, button {font: normal bold 12px "Helvetica" sans-serif;}
+
+h1 {margin: 0; font-weight: bold; font-size: 16pt; text-shadow: #000 2px 2px 4px; line-height: 1.9em; width: 100px; left: 50%; margin-left: -50px; text-align: center;}
+.header, a, ul {color: #EEE; font-family: "Helvetica" Arial sans-serif;position: absolute; z-index: 10}
+.header {background: #444; 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444), color-stop(1, #555));
+	height: 44px; width: 100%;}
+.header .left-button {left: 5px;}
+.header .right-button {right: 5px;}
+
+p {margin: 5px 7px;}
+
+.header button, .pane button, button
+	{border: 0; border-radius: 6px; -webkit-border-radius: 6px; min-width: 50px; height: 30px; padding: 0 6px; margin: 0;}
+	
+.pane .header {background: #333; background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444), color-stop(1, #222))}
+
+.header button, button{background: #202020; color: #DDD; top: 7px; background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #6A809A), color-stop(0.5, #2a406a), color-stop(1, #2a406a))}
+.pane .content button{background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666), color-stop(0.5, #333), color-stop(1, #333))}
+
+button:hover{background: #1a304a; background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #7A90AA), color-stop(0.5, #3a507a), color-stop(1, #3a507a))}
+button:active{background: #204888; background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #6a809a), color-stop(1, #1a304a))} 
+
+.page {margin: 0; padding: 0; width: 100%; position: relative; top: 44px; text-align: left; overflow: hidden;}
+
+.main-window {width: 100%; z-index: 0; overflow: hidden; background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(0,0,0,0.02)), color-stop(0.1, rgba(0,0,0,0.06))); background-size: 22px 2px;background-repeat: repeat;}
+
+.pane {display: block; top: 0; width: 320px; height: 416px; background: #777; overflow: auto;}
+
+#left-pane {left: 0px; z-index: 60; height: 100%;}
+#right-pane {right: -320px; z-index: 50;}
+
+.pane .content {width: 100%; top: 44px; bottom: 0;}
+.pane a {text-decoration: none; color: #FFF;}
+.pane ul {list-style: none; margin: 0; padding: 0;}
+.pane .content li {text-decoration: none; width: 100%; background: #777; color: #DDD; font: normal bold 14px "Helvetica" sans-serif; top: 7px; border: 1px solid #555;margin: -2px; margin-top: 0; padding: 12px 0;}
+.pane .content li:hover {background: #555;}
+.pane .content li a {margin: 1em;}
+
+h1, .header, .header button, .pane, .pane .content {position: absolute;}
+.page, .pane {display: none;}
+
+.button-set {position: relative; margin: 0; top: 7px; left: 5px; width: 180px;}
+.button-set button { -webkit-border-radius: 0;border-radius: 0; margin: 0 0px; padding: 8px 12px;}
+.button-set button:first-child{ border-top-left-radius: 6px; border-bottom-left-radius: 5px; -webkit-border-top-left-radius: 6px; -webkit-border-bottom-left-radius: 5px;}
+.button-set button:last-child{ border-top-right-radius: 6px; border-bottom-right-radius: 5px; -webkit-border-top-right-radius: 6px; -webkit-border-bottom-right-radius: 5px;}
+.c-full { position: relative; height: 40px; margin: 7px 5px; border: 1px solid #AAA; -webkit-box-shadow: 0px 1px 4px #000; background-color: #CCC}
+.c-full span, #brush-preview span{ position: absolute; bottom: 7px; right: 5px; color: #222; font-weight: normal;}
+.touchslider, .c-full {-webkit-border-radius: 4px;}
+.handle{position: absolute; left: 0; margin: 0; top:0; width: 20px; height: 100%; background-color: rgba(255,255,255, 0.2); -webkit-border-radius: 4px; border: 1px solid #333;}
+
+
+#brush-preview {min-width: 110px; position: absolute; height: 34px; bottom: 50%; margin-bottom: -15px;}
+#brush-preview-wrap {min-width: 110px; position: absolute; height: 34px; background-image: url(images/alpha.png); background-repeat: repeat; top: 5px; right: 5px; overflow: hidden;}
+#tool-options {position: absolute; top: 40px; width: 100%;}
+#tool-float{position: relative; display: block; padding: 4px 2px; margin: 5px; width: auto; background: #777; border-radius: 4px; -webkit-border-radius: 4px; max-width: 300px;} 
+
+#tools {top: 44px; right: 0}
+#backgrounds {top: 44px; right: 0px; display: none;}
+
+.opt-navigate {position: absolute; width: 160px; bottom: 7px; left: 5px; top: auto; right: auto;}
+#opt-clear {position: absolute; bottom: 7px; right: 5px; top: auto; left: auto; background-color: #999; color: #FFF}
+
+#canvas-container{width: 100%; position: relative; display: block; overflow: hidden; display: none;}
+canvas { -webkit-box-shadow: 1px 1px 5px #888; border: 1px solid #FFF}
+#click-catcher{width: 100%; height: 100%; text-align: center; position: absolute; background: rgba(0,0,0,0.05);z-index: 20; display: block}
+#click-catcher:active{cursor: crosshair}
+#click-catcher:hover{cursor: crosshair}
+.alert{ position: absolute; top: 50%; left: 50%; margin-top: -90px; margin-left: -135px; width: 250px; height: 180px; color: #FFF; font-size: 22px; background: rgba(0,0,0,0.7);-webkit-border-radius: 10px; border-radius: 10px; padding: 10px; display: none; z-index: 100; -webkit-box-shadow: 1px 1px 12px 4px #CCC;}
+
+.alert p{ font-size: 18px; font-weight: normal;}
+.shade{position: absolute; top:0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 99; display: none; text-align: center;}
+.shade div{ position: absolute; top: 49px; left: 7px; background-color: #222;color: #EEE; font-weight: normal; display: block; width: 280px; text-align: left; border-radius: 12px; -webkit-box-shadow: 1px 1px 12px 4px #CCC; padding: 12px; height:160px;}
+.shade img{background-color: #FFF; height: 100%; -webkit-box-shadow: 1px 1px 19px 4px #000;}
+.shade div h3{ font-size: 22px; font-weight: bold; margin: 5px 7px;}
+.shade div p{ font-size: 16px; }
+
+#export-dialog{display: none}
+
+#debug {width: 800px; position: absolute; height: auto; max-height: 80%; overflow: hidden; bottom: 0; right: 0; color: #FFF; z-index: 100; background:rgba(0,0,0,0.06);}
+#debug p{ font-size: 12px; margin: 0px 4px; color: #000; display: inline}
+
+#icon_pane img, #backgrounds-pane img {width: 80px; height: 80px; overflow: hidden; margin: 10px; background: #FFF; border: 1px solid #444; -webkit-box-shadow: 0 2px 8px 1px #333;}
+.bot-button{ position: absolute; margin: 7px 5px 12px 5px; bottom: 0px; top: auto;}
+
+#tooltips{ position: absolute; width: 100%; color: #FFF; background-color: rgba(0,0,0,0.2); bottom:0; z-index: 40; text-align: center; display: none; font-weight: normal; font-size: 15px;}
+#tooltips-toggle:hover {cursor: pointer;}
+#tooltips-toggle{ position: absolute; height: 22px; width: 22px; bottom: 2px; right: 2px; border-radius: 10px; -webkit-border-radius: 10px; color:#FFF; background-color: #AAA; z-index: 42; display: none;}
+#tooltips-toggle p{line-height: 11px; font-weight: bold; font-style: italic; font-family: serif;}
+
+@-webkit-keyframes spinnerRotate {
+	from {
+		-webkit-transform:rotate(0deg);
+	}
+	to {
+		-webkit-transform:rotate(360deg);
+	}
+}
+
+img.loader {
+-webkit-animation-duration: 1s;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-name: spinnerRotate;
+-webkit-animation-timing-function: linear;
+margin: 0 0 -12px 60px;
+}
+
+#bg-loading.alert {
+	padding: 20px;
+	height: 40px;
+	margin-top: -30px;
+	width: 200px;
+	margin-left: -120px;
+	display: block;
+}
