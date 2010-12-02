@@ -13,13 +13,24 @@ if (skratch === undefined) {var skratch = {};}
 (function(skratch) {
 	skratch.backgroundImage = new Image();
 	skratch.scale = 1;
+	var center = {x:0, y:0};
 	skratch.zoom = function(scale){
 		if (scale === undefined) {
 			return skratch.scale;
 		}
+		center.x = parseInt($('#draw_canvas').css("margin-right")) + ((skratch.width / 2) * skratch.scale);
+		center.y = parseInt($('#draw_canvas').css("margin-bottom")) + ((skratch.height / 2) * skratch.scale);
+		
 		skratch.scale = scale;
-		$('canvas').css('width', skratch.width * scale);
-		$('canvas').css('height', skratch.height * scale);
+		console.log(center.x - ((skratch.width / 2) * skratch.scale));
+		
+		$('canvas').css({
+			'width': skratch.width * scale,
+			'height': skratch.height * scale,
+			'margin-right': center.x - ((skratch.width / 2) * skratch.scale),
+			'margin-bottom': center.y - ((skratch.height / 2) * skratch.scale)
+		});
+		
 		skratch.calculateOffset();
 	};
 	
