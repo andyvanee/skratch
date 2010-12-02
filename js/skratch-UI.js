@@ -285,9 +285,7 @@ $(document).ready(function(){
 			}
 			
 			if (pan.x !== false) {
-				$('canvas').css("margin-right", parseInt($('#draw_canvas').css("margin-right")) + 2 * (pan.x - position.x));
-				$('canvas').css("margin-bottom", parseInt($('#draw_canvas').css("margin-bottom")) + (pan.y - position.y));
-				skratch.calculateOffset();
+				skratch.pan((pan.x - position.x), (pan.y - position.y));
 			}
 			pan["x"] = position.x; 
 			pan["y"] = position.y;
@@ -357,10 +355,7 @@ $(document).ready(function(){
 			if (Math.abs(pan.y - position.y) > 100) { pan.y = position.y };
 				
 			if ((e.type === "mousemove") && (pan.x !== false)) {
-				//log(pan.x - position.x);
-				$('canvas').css("margin-right", parseInt($('#draw_canvas').css("margin-right")) + (pan.x - position.x));
-				$('canvas').css("margin-bottom", parseInt($('#draw_canvas').css("margin-bottom")) + (pan.y - position.y));
-				skratch.calculateOffset();
+				skratch.pan((pan.x - position.x), (pan.y - position.y));
 			}
 			pan = {"x":position.x, "y":position.y, "scale": false};
 		}

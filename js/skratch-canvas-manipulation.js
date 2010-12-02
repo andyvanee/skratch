@@ -17,13 +17,19 @@ if (skratch === undefined) {var skratch = {};}
 		if (scale === undefined) {
 			return skratch.scale;
 		}
-		//alert(scale);
 		skratch.scale = scale;
 		$('canvas').css('width', skratch.width * scale);
 		$('canvas').css('height', skratch.height * scale);
 		skratch.calculateOffset();
 	};
+	
+	skratch.pan = function(x, y) {
+		$('canvas').css("margin-right", parseInt($('#draw_canvas').css("margin-right")) + x);
+		$('canvas').css("margin-bottom", parseInt($('#draw_canvas').css("margin-bottom")) + y);
+		skratch.calculateOffset();
+	};
 	skratch.calculateOffset = function() {
+		//These are used by the drawing code.
 		skratch.offsetX = $('#draw_canvas').offset().left - $('#click-catcher').offset().left;
 		skratch.offsetY = $('#draw_canvas').offset().top - $('#click-catcher').offset().top;
 	};
