@@ -87,6 +87,7 @@ if (skratch === undefined) {var skratch = {};}
 				return false;
 			}
 			skratch.setupTools();
+			skratch.setBackground('background-image', skratch.tools['background-image']);
 			skratch.clearscreen();
 			return true;
 		},
