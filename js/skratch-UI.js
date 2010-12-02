@@ -413,7 +413,7 @@ $(document).ready(function(){
 	
 	//---------------------------
 	(function(){ thistip = 0; skratch.tooltipsON = true;
-		tooltips=["Desktop: Shift to Zoom, Spacebar to Pan", "iOS: Pinch and Swipe to Zoom and Pan", "andyvanee.com", "gurudigitalarts.com"];
+		tooltips=["Desktop: Shift to Zoom, Spacebar to Pan", "iOS: Pinch and Swipe to Zoom and Pan", "amxor.blogspot.com", "gurudigitalarts.com"];
 		skratch.tooltip = function() {
 			thistip += 1;
 			if (thistip == tooltips.length) { thistip = 0 }
