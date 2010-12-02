@@ -1,7 +1,7 @@
 body {margin: 0; padding: 0; overflow: hidden; background: #EEE;}
-body, button {font: normal bold 12px "Helvetica" sans-serif;}
+body, button {font: normal bold 12px Helvetica, sans-serif;}
 
-h1 {margin: 0; font-weight: bold; font-size: 16pt; text-shadow: #000 2px 2px 4px; line-height: 1.9em; width: 100px; left: 50%; margin-left: -50px; text-align: center;}
+h1 {margin: 0; font-weight: bold; font-size: 16pt; font-family: Helvetica, Arial; text-shadow: #000 2px 2px 4px; line-height: 1.9em; width: 100px; left: 50%; margin-left: -50px; text-align: center;}
 .header, a, ul {color: #EEE; font-family: "Helvetica" Arial sans-serif;position: absolute; z-index: 10}
 .header {background: #444; 
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444), color-stop(1, #555));
@@ -12,15 +12,15 @@ h1 {margin: 0; font-weight: bold; font-size: 16pt; text-shadow: #000 2px 2px 4px
 p {margin: 5px 7px;}
 
 .header button, .pane button, button
-	{border: 0; border-radius: 6px; -webkit-border-radius: 6px; min-width: 50px; height: 30px; padding: 0 6px; margin: 0;}
+	{border: 0; border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; min-width: 50px; height: 30px; padding: 0 6px; margin: 0;}
 	
 .pane .header {background: #333; background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444), color-stop(1, #222))}
 
-.header button, button{background: #202020; color: #DDD; top: 7px; background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #6A809A), color-stop(0.5, #2a406a), color-stop(1, #2a406a))}
-.pane .content button{background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666), color-stop(0.5, #333), color-stop(1, #333))}
+.header button, button{background: #4a608a; color: #DDD; top: 7px; background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #6A809A), color-stop(0.5, #2a406a), color-stop(1, #2a406a))}
+.pane .content button{background: #333;background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666), color-stop(0.5, #333), color-stop(1, #333))}
 
-button:hover{background: #1a304a; background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #7A90AA), color-stop(0.5, #3a507a), color-stop(1, #3a507a))}
-button:active{background: #204888; background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #6a809a), color-stop(1, #1a304a))} 
+button:hover{background: #3a507a; background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #7A90AA), color-stop(0.5, #3a507a), color-stop(1, #3a507a))}
+button:active{background: #6a809a; background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #6a809a), color-stop(1, #1a304a))} 
 
 .page {margin: 0; padding: 0; width: 100%; position: relative; top: 44px; text-align: left; overflow: hidden;}
 
@@ -41,7 +41,7 @@ button:active{background: #204888; background-image: -webkit-gradient(linear, le
 h1, .header, .header button, .pane, .pane .content {position: absolute;}
 .page, .pane {display: none;}
 
-.button-set {position: relative; margin: 0; top: 7px; left: 5px; width: 180px;}
+.button-set {position: relative; margin: 0; top: 7px; left: 5px; width: 220px;}
 .button-set button { -webkit-border-radius: 0;border-radius: 0; margin: 0 0px; padding: 8px 12px;}
 .button-set button:first-child{ border-top-left-radius: 6px; border-bottom-left-radius: 5px; -webkit-border-top-left-radius: 6px; -webkit-border-bottom-left-radius: 5px;}
 .button-set button:last-child{ border-top-right-radius: 6px; border-bottom-right-radius: 5px; -webkit-border-top-right-radius: 6px; -webkit-border-bottom-right-radius: 5px;}
@@ -59,7 +59,7 @@ h1, .header, .header button, .pane, .pane .content {position: absolute;}
 #tools {top: 44px; right: 0}
 #backgrounds {top: 44px; right: 0px; display: none;}
 
-.opt-navigate {position: absolute; width: 160px; bottom: 7px; left: 5px; top: auto; right: auto;}
+.opt-navigate {position: absolute; width: 190px; bottom: 7px; left: 5px; top: auto; right: auto;}
 #opt-clear {position: absolute; bottom: 7px; right: 5px; top: auto; left: auto; background-color: #999; color: #FFF}
 
 #canvas-container{width: 100%; position: relative; display: block; overflow: hidden; display: none;}

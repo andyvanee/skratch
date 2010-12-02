@@ -313,6 +313,7 @@ $(document).ready(function(){
 		}
 	},
 	mouse_event = function (e) {
+		e.preventDefault();
 		var position = {};
 		if (e.layerX || e.layerX === 0) { // Firefox
 			position.x = e.layerX;
