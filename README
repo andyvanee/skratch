@@ -3,3 +3,5 @@ Skratch
 An HTML5 Drawing Application targeting webkit browsers, mobile and desktop.
 
 Skratch by Andrew VanEe is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
+
+This is the source release, if you just want to get drawing, you can load it in your web browser at: andyvanee.s3.amazonaws.com/skratch/index.html
